@@ -1,11 +1,13 @@
 export enum ImageKeys {
   HOUSE_TILES = 'HOUSE_TILES',
+  DIALOG = 'DIALOG',
 }
 
-export enum ImagePaths {
-  HOUSE_TILES = 'assets/images/house.png',
-  PLAYER = 'assets/images/player.png',
-}
+export const ImagePaths = {
+  HOUSE_TILES: 'assets/images/house.png',
+  PLAYER: 'assets/images/player.png',
+  DIALOG: 'assets/images/dialog.png',
+};
 
 export enum TiledJSONKeys {
   HOUSE_TILES = 'tilemap',

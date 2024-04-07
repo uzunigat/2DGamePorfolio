@@ -33,10 +33,12 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     );
 
     if (angle >= -45 && angle < 45) {
+      this.flipX = false;
       this.setVelocity(this.speed, 0);
     } else if (angle >= 45 && angle < 135) {
       this.setVelocity(0, this.speed);
     } else if (angle >= 135 || angle < -135) {
+      this.flipX = true;
       this.setVelocity(-this.speed, 0);
     } else {
       this.setVelocity(0, -this.speed);

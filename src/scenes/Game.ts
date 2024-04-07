@@ -10,12 +10,15 @@ import {
   SoundTrackPaths,
   TiledJSONKeys,
 } from './model';
+import { Dialog } from '../ui/dialog';
 
 export default class Demo extends Phaser.Scene {
   player!: Player;
   walls!: Phaser.Tilemaps.TilemapLayer;
+  boundaries!: Phaser.Tilemaps.TilemapLayer;
   cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
   hitboxes!: Phaser.Physics.Arcade.Group;
+  dialog!: Dialog;
 
   constructor() {
     super('GameScene');
@@ -23,6 +26,8 @@ export default class Demo extends Phaser.Scene {
 
   preload() {
     this.load.image(ImageKeys.HOUSE_TILES, ImagePaths.HOUSE_TILES);
+    this.load.image(ImageKeys.DIALOG, ImagePaths.DIALOG);
+
     this.load.tilemapTiledJSON(
       TiledJSONKeys.HOUSE_TILES,
       JSONPaths.HOUSE_TILES
@@ -37,21 +42,24 @@ export default class Demo extends Phaser.Scene {
     musicManager.addMusic(SoundTracks.BACHATA);
     musicManager.playMusic();
 
+    this.dialog = new Dialog(this, '');
+
     this.player = new Player(this, 100, 300);
 
     this.physics.add.collider(this.player, this.walls);
+    this.physics.add.collider(this.player, this.boundaries);
 
     this.cameras.main.startFollow(this.player);
     this.cameras.main.setZoom(2);
 
     this.scene.run('UI', { player: this.player });
-    this.enableDebug();
 
     this.input.on('pointerdown', (pointer: any) => {
       const x = pointer.x + this.cameras.main.scrollX;
       const y = pointer.y + this.cameras.main.scrollY;
 
       this.player.changeDirection(x, y);
+      this.dialog.handleUserClick();
     });
 
     this.input.on('pointerup', () => {
@@ -66,19 +74,44 @@ export default class Demo extends Phaser.Scene {
   private renderHouse() {
     const map = this.make.tilemap({ key: TiledJSONKeys.HOUSE_TILES });
     const tileset = map.addTilesetImage('house', ImageKeys.HOUSE_TILES);
-    this.walls = map.createLayer(Layers.WALLS, tileset, 0, 0);
-    this.walls.setCollisionByProperty({ colission: true });
-    map.createLayer(Layers.FLOOR, tileset, 0, 0);
-    map.createLayer(Layers.DECORATION, tileset, 0, 0);
-  }
 
-  private enableDebug() {
-    this.physics.world.createDebugGraphic();
-    const graphics = this.add.graphics().setAlpha(0.75).setDepth(1000);
-    this.walls.renderDebug(graphics, {
-      tileColor: null,
-      collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255),
-      faceColor: new Phaser.Display.Color(40, 39, 37, 255),
+    this.walls = map.createLayer(Layers.WALLS, tileset, 0, 0);
+    this.walls.setCollisionByProperty({ collision: true });
+
+    map.createLayer(Layers.FLOOR, tileset, 0, 0);
+    this.boundaries = map.createLayer(Layers.BOUNDARIES, tileset, 0, 0);
+    this.boundaries.setCollisionByProperty({ collision: true });
+    this.boundaries.setInteractive();
+
+    this.boundaries.on('pointerdown', (pointer: Phaser.Input.Pointer) => {
+      const worldPoint = pointer.positionToCamera(
+        this.cameras.main
+      ) as Phaser.Math.Vector2;
+      const pointerTileXY = this.boundaries.worldToTileXY(
+        worldPoint.x,
+        worldPoint.y
+      );
+      const tile = this.boundaries.getTileAt(pointerTileXY.x, pointerTileXY.y);
+
+      if (tile && tile.properties.collision) {
+        const distance = Phaser.Math.Distance.Between(
+          this.player.x,
+          this.player.y,
+          worldPoint.x,
+          worldPoint.y
+        );
+        if (distance < 50) {
+          switch (tile.properties.name) {
+            case 'TV':
+              if (!this.dialog.open) {
+                this.dialog.showDialog(
+                  'There is nothing interesting happening here.'
+                );
+              }
+              break;
+          }
+        }
+      }
     });
   }
 }

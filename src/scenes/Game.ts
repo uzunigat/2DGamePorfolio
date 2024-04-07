@@ -1,7 +1,15 @@
 import Phaser from 'phaser';
-import { Paper, Player } from '../objects';
+import { Player } from '../objects';
 import { SoundTracks } from '../music/model/soundTracks';
 import { MusicManager } from '../music';
+import {
+  ImageKeys,
+  ImagePaths,
+  JSONPaths,
+  Layers,
+  SoundTrackPaths,
+  TiledJSONKeys,
+} from './model';
 
 export default class Demo extends Phaser.Scene {
   player!: Player;
@@ -14,10 +22,13 @@ export default class Demo extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('base_tiles', 'assets/house.png');
-    this.load.tilemapTiledJSON('tilemap', 'assets/house.json');
-    this.load.atlas('player', 'assets/player.png', 'assets/player.json');
-    this.load.audio(SoundTracks.BACHATA, 'assets/bachata_16_bits.mp3');
+    this.load.image(ImageKeys.HOUSE_TILES, ImagePaths.HOUSE_TILES);
+    this.load.tilemapTiledJSON(
+      TiledJSONKeys.HOUSE_TILES,
+      JSONPaths.HOUSE_TILES
+    );
+    this.load.atlas('player', ImagePaths.PLAYER, JSONPaths.PLAYER);
+    this.load.audio(SoundTracks.BACHATA, SoundTrackPaths.BACHATA);
   }
 
   create() {
@@ -37,7 +48,6 @@ export default class Demo extends Phaser.Scene {
     this.enableDebug();
 
     this.input.on('pointerdown', (pointer: any) => {
-      // Get the pointer's position relative to the camera
       const x = pointer.x + this.cameras.main.scrollX;
       const y = pointer.y + this.cameras.main.scrollY;
 
@@ -54,12 +64,12 @@ export default class Demo extends Phaser.Scene {
   }
 
   private renderHouse() {
-    const map = this.make.tilemap({ key: 'tilemap' });
-    const tileset = map.addTilesetImage('house', 'base_tiles');
-    this.walls = map.createLayer('Wall', tileset, 0, 0);
+    const map = this.make.tilemap({ key: TiledJSONKeys.HOUSE_TILES });
+    const tileset = map.addTilesetImage('house', ImageKeys.HOUSE_TILES);
+    this.walls = map.createLayer(Layers.WALLS, tileset, 0, 0);
     this.walls.setCollisionByProperty({ colission: true });
-    map.createLayer('Floor', tileset, 0, 0);
-    map.createLayer('Decoration', tileset, 0, 0);
+    map.createLayer(Layers.FLOOR, tileset, 0, 0);
+    map.createLayer(Layers.DECORATION, tileset, 0, 0);
   }
 
   private enableDebug() {

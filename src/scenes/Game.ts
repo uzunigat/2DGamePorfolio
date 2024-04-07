@@ -15,7 +15,6 @@ export default class Demo extends Phaser.Scene {
 
   preload() {
     this.load.image('base_tiles', 'assets/house.png');
-    this.load.image('arrow', 'assets/arrow.png');
     this.load.tilemapTiledJSON('tilemap', 'assets/house.json');
     this.load.atlas('player', 'assets/player.png', 'assets/player.json');
     this.load.audio(SoundTracks.BACHATA, 'assets/bachata_16_bits.mp3');
@@ -28,39 +27,30 @@ export default class Demo extends Phaser.Scene {
     musicManager.playMusic();
 
     this.player = new Player(this, 100, 300);
-    const degree = new Paper(this, 450, 220, 30, 30, 'Degree', 'Degree');
-
-    this.hitboxes = this.physics.add.group({ visible: false });
-
-    this.hitboxes.add(degree);
 
     this.physics.add.collider(this.player, this.walls);
-    this.physics.add.collider(this.player, this.hitboxes, (obj1, obj2) => {
-      alert(obj2.getData('description'));
-    });
 
     this.cameras.main.startFollow(this.player);
     this.cameras.main.setZoom(2);
 
-    this.cursors = this.input.keyboard.createCursorKeys();
-
     this.scene.run('UI', { player: this.player });
     this.enableDebug();
-  }
-  update() {
-    if (this.cursors?.up.isDown) {
-      this.player.move('up');
-    } else if (this.cursors?.down.isDown) {
-      this.player.move('down');
-    } else if (this.cursors?.left.isDown) {
-      this.player.move('left');
-    } else if (this.cursors?.right.isDown) {
-      this.player.move('right');
-    } else {
-      this.player.noKeysPressed = true;
-    }
 
-    this.player.idle();
+    this.input.on('pointerdown', (pointer: any) => {
+      // Get the pointer's position relative to the camera
+      const x = pointer.x + this.cameras.main.scrollX;
+      const y = pointer.y + this.cameras.main.scrollY;
+
+      this.player.changeDirection(x, y);
+    });
+
+    this.input.on('pointerup', () => {
+      this.player.stopMoving();
+    });
+  }
+
+  update() {
+    this.player.update();
   }
 
   private renderHouse() {

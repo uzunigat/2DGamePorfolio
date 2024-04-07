@@ -3,6 +3,8 @@ import { PlayerAnimations } from './models';
 
 class Player extends Phaser.Physics.Arcade.Sprite {
   public noKeysPressed = false;
+  private speed: number;
+
   constructor(scene: Phaser.Scene, x: number, y: number) {
     super(scene, x, y, 'player', 'idle_0');
 
@@ -14,8 +16,35 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     this.setOffset(8, 6);
 
     this.makePlayerAnimations(scene);
+    this.speed = 100; // Change this value to make the player move faster or slower
 
     this.play(PlayerAnimations.Idle);
+  }
+
+  stopMoving() {
+    // Stop the player's movement
+    this.setVelocity(0, 0);
+
+    // Play the idle animation
+    this.play(PlayerAnimations.Idle, true);
+  }
+  changeDirection(targetX: number, targetY: number) {
+    const angle = Phaser.Math.RadToDeg(
+      Phaser.Math.Angle.Between(this.x, this.y, targetX, targetY)
+    );
+
+    if (angle >= -45 && angle < 45) {
+      this.setVelocity(this.speed, 0);
+    } else if (angle >= 45 && angle < 135) {
+      this.setVelocity(0, this.speed);
+    } else if (angle >= 135 || angle < -135) {
+      this.setVelocity(-this.speed, 0);
+    } else {
+      this.setVelocity(0, -this.speed);
+    }
+
+    // Play the walking animation
+    this.play(PlayerAnimations.Walk, true);
   }
 
   private makePlayerAnimations(scene: Phaser.Scene) {

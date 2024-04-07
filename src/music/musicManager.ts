@@ -12,9 +12,21 @@ class MusicManager {
 
   playMusic() {
     if (this.music) {
-      this.music.play();
+      this.music.play({ loop: true, volume: 0.1 });
     } else {
       console.log('No music track is loaded');
+    }
+  }
+
+  stopMusic() {
+    if (this.music) {
+      this.music.stop();
+    }
+  }
+
+  pauseMusic() {
+    if (this.music) {
+      this.music.pause();
     }
   }
 }

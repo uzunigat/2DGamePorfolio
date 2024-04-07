@@ -13,8 +13,6 @@ class MusicManager {
   playMusic() {
     if (this.music) {
       this.music.play({ loop: true, volume: 0.1 });
-    } else {
-      console.log('No music track is loaded');
     }
   }
 

@@ -16,18 +16,17 @@ class Player extends Phaser.Physics.Arcade.Sprite {
     this.setOffset(8, 6);
 
     this.makePlayerAnimations(scene);
-    this.speed = 100; // Change this value to make the player move faster or slower
+    this.speed = 100;
 
     this.play(PlayerAnimations.Idle);
   }
 
   stopMoving() {
-    // Stop the player's movement
     this.setVelocity(0, 0);
 
-    // Play the idle animation
     this.play(PlayerAnimations.Idle, true);
   }
+
   changeDirection(targetX: number, targetY: number) {
     const angle = Phaser.Math.RadToDeg(
       Phaser.Math.Angle.Between(this.x, this.y, targetX, targetY)
@@ -43,7 +42,6 @@ class Player extends Phaser.Physics.Arcade.Sprite {
       this.setVelocity(0, -this.speed);
     }
 
-    // Play the walking animation
     this.play(PlayerAnimations.Walk, true);
   }
 
@@ -67,47 +65,6 @@ class Player extends Phaser.Physics.Arcade.Sprite {
       frameRate: 4,
       repeat: -1,
     });
-  }
-
-  walk() {
-    if (
-      !this.anims.currentAnim ||
-      this.anims.currentAnim.key !== PlayerAnimations.Walk
-    ) {
-      this.play(PlayerAnimations.Walk);
-    }
-  }
-
-  move(direction: string) {
-    this.noKeysPressed = false;
-    this.walk();
-    switch (direction) {
-      case 'up':
-        this.setVelocity(0, -100);
-        break;
-      case 'down':
-        this.setVelocity(0, 100);
-        break;
-      case 'left':
-        this.setVelocity(-100, 0);
-        this.setFlipX(true);
-        break;
-      case 'right':
-        this.setVelocity(100, 0);
-        this.setFlipX(false);
-        break;
-    }
-  }
-
-  idle() {
-    this.noKeysPressed && this.setVelocity(0);
-    if (
-      this.noKeysPressed &&
-      (!this.anims.currentAnim ||
-        this.anims.currentAnim.key !== PlayerAnimations.Idle)
-    ) {
-      this.play(PlayerAnimations.Idle);
-    }
   }
 }
 

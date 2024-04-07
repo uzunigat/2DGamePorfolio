@@ -1,5 +1,7 @@
 import Phaser from 'phaser';
-import { Player } from '../objects';
+import { Paper, Player } from '../objects';
+import { SoundTracks } from '../music/model/soundTracks';
+import { MusicManager } from '../music';
 
 export default class Demo extends Phaser.Scene {
   player!: Player;
@@ -16,33 +18,33 @@ export default class Demo extends Phaser.Scene {
     this.load.image('arrow', 'assets/arrow.png');
     this.load.tilemapTiledJSON('tilemap', 'assets/house.json');
     this.load.atlas('player', 'assets/player.png', 'assets/player.json');
-    this.load.audio('bachata', 'assets/bachata_16_bits.mp3');
+    this.load.audio(SoundTracks.BACHATA, 'assets/bachata_16_bits.mp3');
   }
 
   create() {
     this.renderHouse();
+    const musicManager = new MusicManager(this.sound);
+    musicManager.addMusic(SoundTracks.BACHATA);
+    musicManager.playMusic();
 
     this.player = new Player(this, 100, 300);
+    const degree = new Paper(this, 450, 220, 30, 30, 'Degree', 'Degree');
+
+    this.hitboxes = this.physics.add.group({ visible: false });
+
+    this.hitboxes.add(degree);
+
     this.physics.add.collider(this.player, this.walls);
+    this.physics.add.collider(this.player, this.hitboxes, (obj1, obj2) => {
+      alert(obj2.getData('description'));
+    });
 
     this.cameras.main.startFollow(this.player);
     this.cameras.main.setZoom(2);
 
-    this.hitboxes = this.physics.add.group({ visible: false });
-
-    let hitbox = this.add.rectangle(465, 240, 30, 30, 0x000000, 0);
-    this.physics.world.enable(hitbox);
-    this.hitboxes.add(hitbox);
-
-    this.physics.add.collider(this.player, this.hitboxes, () => {
-      console.log('hit');
-    });
-
     this.cursors = this.input.keyboard.createCursorKeys();
 
-    const music = this.sound.add('bachata');
     this.scene.run('UI', { player: this.player });
-    music.play();
     this.enableDebug();
   }
   update() {

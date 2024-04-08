@@ -246,6 +246,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@remix-run/router@1.15.3":
+  "integrity" "sha512-Oy8rmScVrVxWZVOpEF57ovlnhpZ8CCPlnIIumVcV9nFdiSIrus99+Lw78ekXyGvVDlIsFJbSfmSovJUhCWYV3w=="
+  "resolved" "https://registry.npmjs.org/@remix-run/router/-/router-1.15.3.tgz"
+  "version" "1.15.3"
+
 "@rollup/plugin-alias@^3.1.9":
   "integrity" "sha512-QI5fsEvm9bDzt32k39wpOwZhVzRcL5ydcffUHMyLVaVaLeC70I8TJZ17F1z1eMoLu4E/UOcH9BWVkKpIKdrfiw=="
   "resolved" "https://registry.npmjs.org/@rollup/plugin-alias/-/plugin-alias-3.1.9.tgz"
@@ -331,6 +336,11 @@
   "resolved" "https://registry.npmjs.org/@types/estree/-/estree-1.0.5.tgz"
   "version" "1.0.5"
 
+"@types/history@^4.7.11":
+  "integrity" "sha512-qjDJRrmvBMiTx+jyLxvLfJU7UznFuokDv4f3WRuriHKERccVpFU+8XMQUAbDzoiJCsmexxRExQeMwwCdamSKDA=="
+  "resolved" "https://registry.npmjs.org/@types/history/-/history-4.7.11.tgz"
+  "version" "4.7.11"
+
 "@types/node@^18.0.0 || >=20.0.0", "@types/node@^20.12.5":
   "integrity" "sha512-BD+BjQ9LS/D8ST9p5uqBxghlN+S42iuNxjsUGjeZobe/ciXzk2qb1B6IXc6AnRLS+yFJRpN2IPEHMzwspfDJNw=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-20.12.5.tgz"
@@ -348,6 +358,23 @@
   "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.2.24.tgz"
   "version" "18.2.24"
   dependencies:
+    "@types/react" "*"
+
+"@types/react-router-dom@^5.3.3":
+  "integrity" "sha512-kpqnYK4wcdm5UaWI3fLcELopqLrHgLqNsdpHauzlQktfkHL3npOSwtj1Uz9oKBAzs7lFtVkV8j83voAz2D8fhw=="
+  "resolved" "https://registry.npmjs.org/@types/react-router-dom/-/react-router-dom-5.3.3.tgz"
+  "version" "5.3.3"
+  dependencies:
+    "@types/history" "^4.7.11"
+    "@types/react" "*"
+    "@types/react-router" "*"
+
+"@types/react-router@*":
+  "integrity" "sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q=="
+  "resolved" "https://registry.npmjs.org/@types/react-router/-/react-router-5.1.20.tgz"
+  "version" "5.1.20"
+  dependencies:
+    "@types/history" "^4.7.11"
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^18.2.74":
@@ -521,10 +548,10 @@
   "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz"
   "version" "2.3.3"
 
-"function-bind@^1.1.1":
-  "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
-  "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
-  "version" "1.1.1"
+"function-bind@^1.1.2":
+  "integrity" "sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA=="
+  "resolved" "https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz"
+  "version" "1.1.2"
 
 "gensync@^1.0.0-beta.2":
   "integrity" "sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg=="
@@ -553,12 +580,12 @@
   "resolved" "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz"
   "version" "3.0.0"
 
-"has@^1.0.3":
-  "integrity" "sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw=="
-  "resolved" "https://registry.npmjs.org/has/-/has-1.0.3.tgz"
-  "version" "1.0.3"
+"hasown@^2.0.0":
+  "integrity" "sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ=="
+  "resolved" "https://registry.npmjs.org/hasown/-/hasown-2.0.2.tgz"
+  "version" "2.0.2"
   dependencies:
-    "function-bind" "^1.1.1"
+    "function-bind" "^1.1.2"
 
 "inflight@^1.0.4":
   "integrity" "sha1-Sb1jMdfQLQwJvJEKEHW6gWW1bfk= sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA=="
@@ -578,12 +605,12 @@
   "resolved" "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz"
   "version" "2.0.4"
 
-"is-core-module@^2.8.1":
-  "integrity" "sha512-+5FPy5PnwmO3lvfMb0AsoPaBG+5KHUI0wYFXOtYPnVVVspTFUuMZNfNaNVRt3FZadstu2c8x23vykRW/NBoU6A=="
-  "resolved" "https://registry.npmjs.org/is-core-module/-/is-core-module-2.9.0.tgz"
-  "version" "2.9.0"
+"is-core-module@^2.13.0":
+  "integrity" "sha512-hHrIjvZsftOsvKSn2TRYl63zvxsgE0K+0mYMoH6gD4omR5IWB2KynivBQczo3+wF1cCkjzvptnI9Q0sPU66ilw=="
+  "resolved" "https://registry.npmjs.org/is-core-module/-/is-core-module-2.13.1.tgz"
+  "version" "2.13.1"
   dependencies:
-    "has" "^1.0.3"
+    "hasown" "^2.0.0"
 
 "is-reference@^1.2.1":
   "integrity" "sha512-U82MsXXiFIrjCK4otLT+o2NA2Cd2g5MLoOVXUZjIOhLurrRxpEXzI8O0KZHr3IjLvlAH1kTPYSuqer5T9ZVBKQ=="
@@ -707,7 +734,7 @@
   "resolved" "https://registry.npmjs.org/process/-/process-0.11.10.tgz"
   "version" "0.11.10"
 
-"react-dom@^18.2.0":
+"react-dom@^18.2.0", "react-dom@>=16.8":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"
@@ -720,7 +747,22 @@
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.14.0.tgz"
   "version" "0.14.0"
 
-"react@^18.2.0":
+"react-router-dom@^6.22.3":
+  "integrity" "sha512-7ZILI7HjcE+p31oQvwbokjk6OA/bnFxrhJ19n82Ex9Ph8fNAq+Hm/7KchpMGlTgWhUxRHMMCut+vEtNpWpowKw=="
+  "resolved" "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.22.3.tgz"
+  "version" "6.22.3"
+  dependencies:
+    "@remix-run/router" "1.15.3"
+    "react-router" "6.22.3"
+
+"react-router@6.22.3":
+  "integrity" "sha512-dr2eb3Mj5zK2YISHK++foM9w4eBnO23eKnZEDs7c880P6oKbrjz/Svg9+nxqtHQK+oMW4OtjZca0RqPglXxguQ=="
+  "resolved" "https://registry.npmjs.org/react-router/-/react-router-6.22.3.tgz"
+  "version" "6.22.3"
+  dependencies:
+    "@remix-run/router" "1.15.3"
+
+"react@^18.2.0", "react@>=16.8":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"
@@ -728,11 +770,11 @@
     "loose-envify" "^1.1.0"
 
 "resolve@^1.17.0":
-  "integrity" "sha512-Hhtrw0nLeSrFQ7phPp4OOcVjLPIeMnRlr5mcnVuMe7M/7eBn98A3hmFRLoFo3DLZkivSYwhRUJTyPyWAk56WLw=="
-  "resolved" "https://registry.npmjs.org/resolve/-/resolve-1.22.0.tgz"
-  "version" "1.22.0"
+  "integrity" "sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw=="
+  "resolved" "https://registry.npmjs.org/resolve/-/resolve-1.22.8.tgz"
+  "version" "1.22.8"
   dependencies:
-    "is-core-module" "^2.8.1"
+    "is-core-module" "^2.13.0"
     "path-parse" "^1.0.7"
     "supports-preserve-symlinks-flag" "^1.0.0"
 

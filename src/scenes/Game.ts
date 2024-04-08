@@ -12,7 +12,7 @@ import {
 } from './model';
 import { Dialog } from '../ui/dialog';
 
-export default class Demo extends Phaser.Scene {
+class GameScene extends Phaser.Scene {
   player!: Player;
   walls!: Phaser.Tilemaps.TilemapLayer;
   boundaries!: Phaser.Tilemaps.TilemapLayer;
@@ -115,3 +115,5 @@ export default class Demo extends Phaser.Scene {
     });
   }
 }
+
+export { GameScene };

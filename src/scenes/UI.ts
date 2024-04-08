@@ -10,4 +10,4 @@ class UIScene extends Phaser.Scene {
   create() {}
 }
 
-export default UIScene;
+export { UIScene };

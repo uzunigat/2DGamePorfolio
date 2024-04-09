@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'poxel';
+    src: local('poxel'),
+    url('/assets/fonts/pixelFont.ttf') format('truetype'),
+} 
+
+body {
+    overflow-y: auto;
+}

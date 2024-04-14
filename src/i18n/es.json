@@ -1,6 +1,16 @@
 {
+    "testKey": "test-es",
     "personalData": {
         "givenName": "Rodrigo",
-        "familyName": "Zuniga"
+        "familyName": "Zuniga",
+        "occupation": "Desarrollador Full Stack",
+        "email": "rodrigo.zuniga@hotmail.com",
+        "phone": "+33 7 66 79 76 19",
+        "city": "Paris",
+        "linkedin": "https://www.linkedin.com/in/rodrigo-zu%C3%B1iga-1121431b9",
+        "github": ""
+    },
+    "resume": {
+        "description": ""
     }
 }

@@ -5,10 +5,11 @@ import esJSON from './es.json'
 import frJSON from './fr.json'
 import i18next from 'i18next'
 import { languageCodeISOFormat } from './utils'
+import { debug } from 'console'
 
 const initLocales = () => {
   i18next.use(initReactI18next).init({
-    debug: false,
+    debug: true,
     resources: {
       en: {
         translation: enJSON,
@@ -30,9 +31,9 @@ const initLocales = () => {
   })
 }
 
-export function changeLanguage(language: string) {
+function changeLanguage(language: string) {
   const languageFormated = languageCodeISOFormat(language)
   i18next.changeLanguage(languageFormated)
 }
 
-export { initLocales, i18n }
+export { initLocales, changeLanguage, i18n }

@@ -1,7 +1,25 @@
 {
-    "testKey": "test",
     "personalData": {
         "givenName": "Rodrigo",
-        "familyName": "Zuniga"
+        "familyName": "Zuniga",
+        "occupation": "Full Stack Developer"
+    },
+    "contactDetails": {
+        "title": "Contact Details",
+        "email": "rodrigo.zuniga@hotmail.com",
+        "phoneNumber": "+33 7 66 79 76 19",
+        "country": "France",
+        "city": "Paris"
+    },
+    "social": {
+        "linkedin": "https://www.linkedin.com/in/rodrigo-zu%C3%B1iga-1121431b9/?locale=en_US",
+        "github": "https://github.com/uzunigat"
+    },
+    "resume": {
+        "description": "A Paris based Fullstack Engineer, currently employed by Audibene. Eager innovator and coding enthusiast on a quest to shape a brighter tech-driven future."
+    },
+    "aboutMe": {
+        "title": "About Me",
+        "description": "A dancer at heart, a game development enthusiast with an entrepreneurial spirit, and a passion for coding. Originally from Mexico City, I later moved to France to pursue my Computer Science Engineering Degree at the University of Technology of Compiegne. My journey into the world of software development began with an internship at Faurecia, where I gained my first hands-on experience as a Developer. To complete my Engineering degree, I embarked on an apprenticeship as a Salesforce consultant, further honing my skills. Currently, I am thriving as a Fullstack Engineer, leveraging my diverse background and expertise to make a positive impact in the tech industry."
     }
 }

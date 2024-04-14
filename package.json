@@ -37,12 +37,14 @@
     "vite": "^5.2.8"
   },
   "dependencies": {
+    "@types/country-flag-icons": "^1.2.2",
     "@types/i18next": "^13.0.0",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
     "@types/react-i18next": "^8.1.0",
     "@types/react-icons": "^3.0.0",
     "@types/react-router-dom": "^5.3.3",
+    "country-flag-icons": "^1.5.11",
     "i18next": "^23.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

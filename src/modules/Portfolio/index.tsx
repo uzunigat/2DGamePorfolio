@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Presentation } from './Presentation'
 import { Projects } from './Projects'
+import { AboutMe } from './AboutMe'
+import { Education } from './Education'
 
 export const Portfolio = () => {
   // save darMode state in local storage
@@ -17,8 +19,12 @@ export const Portfolio = () => {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900'>
+      <main className='bg-white scroll-smooth px-10 md:px-20 lg:px-40 dark:bg-gray-900'>
         <Presentation toggleDarkMode={toggleDarkMode} />
+        <div className='my-6 border-b-2 border-gray-200 dark:border-gray-700 w-full lg:max-w-screen-lg mx-auto'></div>
+        <AboutMe />
+        <div className='my-6 border-b-2 border-gray-200 dark:border-gray-700 w-full lg:max-w-screen-lg mx-auto'></div>
+        <Education />
         <div className='my-6 border-b-2 border-gray-200 dark:border-gray-700 w-full lg:max-w-screen-lg mx-auto'></div>
         <Projects />
       </main>

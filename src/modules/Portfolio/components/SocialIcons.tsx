@@ -10,8 +10,8 @@ export const SocialIcons = () => {
   }
     return(
     <div className='text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-white'>
-        <AiFillGithub onClick={() => openLink(GITHUB_URL)} className="transform transition duration-500 ease-in-out hover:scale-110"/>
-        <AiFillLinkedin onClick={() => openLink(LINKEDIN_URL)} className="transform transition duration-500 ease-in-out hover:scale-110"/>
+        <AiFillGithub onClick={() => openLink(GITHUB_URL)} className="cursor-pointer transform transition duration-500 ease-in-out hover:scale-110"/>
+        <AiFillLinkedin onClick={() => openLink(LINKEDIN_URL)} className="cursor-pointer transform transition duration-500 ease-in-out hover:scale-110"/>
       </div>
     )
 }

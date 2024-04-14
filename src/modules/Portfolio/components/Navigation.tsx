@@ -2,6 +2,8 @@ import { use } from "matter";
 import React, { useEffect, useState } from "react"
 import { BsFillMoonStarsFill } from "react-icons/bs"
 import { FiMenu } from "react-icons/fi"
+import { Button } from "./Button";
+import { FaGamepad } from 'react-icons/fa';
 
 type NavigationProps = {
   toggleDarkMode: () => void;
@@ -28,8 +30,7 @@ export const Navigation = ({ toggleDarkMode }: NavigationProps) => {
           <BsFillMoonStarsFill className='cursor-pointer text-2xl dark:text-white transform transition duration-500 ease-in-out hover:scale-110' onClick={toggleDarkMode}/>
         </div>
         <ul className={`flex justify-between flex-col sm:flex-row items-center ${isOpen ? '' : 'hidden'}`}>
-          <li className='mb-4 sm:mb-0 sm:mr-8'><a className='bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md font-poxel text-sm' onClick={goToGameMode}>Game Mode</a></li>
-          <li><a className='bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md' href="#">Resume</a></li>
+          <Button className='mx-2 font-poxel' text='Game Mode' onClick={goToGameMode} Icon={FaGamepad}/>
         </ul>
       </nav>
     )

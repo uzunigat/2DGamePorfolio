@@ -21,5 +21,53 @@
     "aboutMe": {
         "title": "About Me",
         "description": "A dancer at heart, a game development enthusiast with an entrepreneurial spirit, and a passion for coding. Originally from Mexico City, I later moved to France to pursue my Computer Science Engineering Degree at the University of Technology of Compiegne. My journey into the world of software development began with an internship at Faurecia, where I gained my first hands-on experience as a Developer. To complete my Engineering degree, I embarked on an apprenticeship as a Salesforce consultant, further honing my skills. Currently, I am thriving as a Fullstack Engineer, leveraging my diverse background and expertise to make a positive impact in the tech industry."
+    },
+    "education": {
+        "title": "Education",
+        "utc": {
+            "schoolName": "University of Technology of Compiegne",
+            "degree": "Computer Science Engineering",
+            "location": "Compiegne, France",
+            "duration": "2017 - 2022",
+            "description": "I learned many aspects of Computer Science ranging from the basics of computing in different programming languages to more advanced topics such as IoT, cloud and distributed systems. I participated in small team projects like fully distributed Facebook using docker containers, desktop applications using C++ and QT. On the other hand, I was part of a team of more than 25 developers creating a stategy python game."
+        },
+        "ipn": {
+            "schoolName": "National Polytechnic Institute",
+            "degree": "Computer Technician",
+            "location": "Mexico City, Mexico",
+            "duration": "2015 - 2017",
+            "description": "I learned the basics of structured and object-oriented programming as well as networks and databases. I made basic projects such as Java EE application and file traitement program using C."
+        }
+    },
+    "experience": {
+        "title": "Experience",
+        "audibene": {
+            "company": "Audibene",
+            "position": "Fullstack Engineer",
+            "location": "Berlin, Germany",
+            "duration": "2022 - Present",
+            "description": "Fullstack Engineer specializing in telemedicine projects. Expert in implementing backend and frontend solutions, deploying microservices using Kubernetes, Pulsar, Jenkins, Docker, TypeScript, and Go. Passionate about revolutionizing healthcare through"
+        },
+        "solganeo": {
+            "company": "Solganeo",
+            "position": "Salesforce Consultant",
+            "location": "Paris, France",
+            "duration": "July 2021 - August 2021",
+            "description": "Adapt Salesforce solutions. Within the startup I learned to lead developer teams and solve different types of problems in internal applications (Salesforce) or external (Node, Talend, Jenkins, ...). I made the migration of the website developed with PHP to a CMS (Wordpress) and I was responsible for the development of a web-push-browser application that allows sending notifications to clients subscribed to a web browser using Node.js."
+        },
+        "audibeneConsultant": {
+            "company": "Audibene",
+            "position": "SMS Custom Activity",
+            "location": "Paris, France",
+            "duration": "Febrruary 2022 - May 2022",
+            "description": "Fix bugs and create new features with a Node.js application connected to Salesforce Marketing Cloud Journeys in order to send SMS."
+        },
+        "faurecia": {
+            "company": "Faurecia",
+            "position": "Internship as a Developer",
+            "location": "Paris, France",
+            "duration": "July 2020 - August 2020",
+            "description": "Finalize the web-based digital audit version, Adapt the system according to the requests formulated by our internal 'GIS' department, Provide feedback and modifications to comments made by users, Ensure the setting and correction of bugs"
+        }
     }
 }

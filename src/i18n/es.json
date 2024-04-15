@@ -1,16 +1,25 @@
 {
-    "testKey": "test-es",
     "personalData": {
         "givenName": "Rodrigo",
         "familyName": "Zuniga",
-        "occupation": "Desarrollador Full Stack",
+        "occupation": "Desarrollador Full Stack"
+    },
+    "contactDetails": {
+        "title": "Detalles de Contacto",
         "email": "rodrigo.zuniga@hotmail.com",
-        "phone": "+33 7 66 79 76 19",
-        "city": "Paris",
-        "linkedin": "https://www.linkedin.com/in/rodrigo-zu%C3%B1iga-1121431b9",
-        "github": ""
+        "phoneNumber": "+33 7 66 79 76 19",
+        "country": "Francia",
+        "city": "París"
+    },
+    "social": {
+        "linkedin": "https://www.linkedin.com/in/rodrigo-zu%C3%B1iga-1121431b9/?locale=en_US",
+        "github": "https://github.com/uzunigat"
     },
     "resume": {
-        "description": ""
+        "description": "Un ingeniero Fullstack con sede en París, actualmente empleado por Audibene. Innovador entusiasta y entusiasta de la codificación en una misión para dar forma a un futuro más brillante impulsado por la tecnología."
+    },
+    "aboutMe": {
+        "title": "Acerca de Mí",
+        "description": "Un bailarín de corazón, un entusiasta del desarrollo de juegos con espíritu emprendedor y una pasión por la codificación. Originalmente de la Ciudad de México, más tarde me mudé a Francia para cursar mi Licenciatura en Ingeniería Informática en la Universidad de Tecnología de Compiegne. Mi viaje al mundo del desarrollo de software comenzó con una pasantía en Faurecia, donde obtuve mi primera experiencia práctica como Desarrollador. Para completar mi licenciatura en ingeniería, emprendí un aprendizaje como consultor de Salesforce, perfeccionando aún más mis habilidades. Actualmente, estoy prosperando como Ingeniero Fullstack, aprovechando mi diverso trasfondo y experiencia para tener un impacto positivo en la industria tecnológica."
     }
 }

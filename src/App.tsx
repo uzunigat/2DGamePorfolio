@@ -6,6 +6,7 @@ import { initLocales, i18n } from "./i18n/i18n"
 import { I18nextProvider } from "react-i18next"
 
 initLocales()
+
 export const App = () => {
     if (!i18n.language) return null
     return (

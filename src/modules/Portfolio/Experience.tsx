@@ -7,8 +7,8 @@ export const Experience = () => {
     const { t } = useTranslation()
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-3 max-w-6xl mx-auto my-12">
-            <div className="col-span-1 dark:text-white underline underline-offset-4 decoration-teal-500 text-lg">{t(EXPERIENCE_TRANSLATIONS.TITLE)}</div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 max-w-6xl mx-auto md:my-12">
+            <div className="col-span-1 my-8 md:my-0 dark:text-white underline underline-offset-4 decoration-teal-500 text-xl md:text-lg sm:text-left text-center">{t(EXPERIENCE_TRANSLATIONS.TITLE)}</div>
             <div className="col-span-2">
                 <InfoCard title={t(AUDIBENE_TRANSLATIONS.COMPANY)} position={t(AUDIBENE_TRANSLATIONS.POSITION)} duration={t(AUDIBENE_TRANSLATIONS.DURATION)} location={t(AUDIBENE_TRANSLATIONS.LOCATION)} description={t(AUDIBENE_TRANSLATIONS.DESCRIPTION)} />
                 <InfoCard title={t(SOLGANEO_TRANSLATIONS.COMPANY)} position={t(SOLGANEO_TRANSLATIONS.POSITION)} duration={t(SOLGANEO_TRANSLATIONS.DURATION)} location={t(SOLGANEO_TRANSLATIONS.LOCATION)} description={t(SOLGANEO_TRANSLATIONS.DESCRIPTION)} />

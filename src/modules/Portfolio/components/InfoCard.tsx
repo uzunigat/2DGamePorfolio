@@ -14,7 +14,7 @@ export const InfoCard = ({title, position, duration, location, description}: Edu
     }, [position, duration])
 
     return (
-        <div className="mb-4">
+        <div className="my-4">
             <div className='dark:text-white'>
                 <h3 className='white:underline-offset-4 decoration-teal-500 dark:text-teal-500 text-2xl font-medium'>{title}</h3>
                 <p className='opacity-40'>{subtitle}</p>

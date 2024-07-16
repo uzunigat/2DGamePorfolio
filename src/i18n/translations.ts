@@ -81,6 +81,42 @@ enum AUDIBENE_CONSULTANT_TRANSLATIONS {
   DESCRIPTION = 'experience.audibeneConsultant.description',
 }
 
+enum CASTLE_RAIDER_TRANSLATIONS {
+  TITLE = 'projects.castleRaider.title',
+  DESCRIPTION = 'projects.castleRaider.description',
+  GITHUB = 'projects.castleRaider.github',
+}
+
+enum PACMAN_TRANSLATIONS {
+  TITLE = 'projects.pacman.title',
+  DESCRIPTION = 'projects.pacman.description',
+  GITHUB = 'projects.pacman.github',
+}
+
+enum MONSTERJA_LAND_TRANSLATIONS {
+  TITLE = 'projects.monsterjaLand.title',
+  DESCRIPTION = 'projects.monsterjaLand.description',
+  GITHUB = 'projects.monsterjaLand.github',
+}
+
+enum FACEBOOK_DISTRIBUTED_TRANSLATIONS {
+  TITLE = 'projects.facebookDistributed.title',
+  DESCRIPTION = 'projects.facebookDistributed.description',
+  GITHUB = 'projects.facebookDistributed.github',
+}
+
+enum UTCHAT_TRANSLATIONS {
+  TITLE = 'projects.utchat.title',
+  DESCRIPTION = 'projects.utchat.description',
+  GITHUB = 'projects.utchat.github',
+}
+
+enum TROMBI_UTC_TRANSLATIONS {
+  TITLE = 'projects.trombiUTC.title',
+  DESCRIPTION = 'projects.trombiUTC.description',
+  GITHUB = 'projects.trombiUTC.github',
+}
+
 export {
   PERSONAL_DATA_TRANSLATIONS,
   RESUME_TRANSLATIONS,
@@ -95,4 +131,10 @@ export {
   SOLGANEO_TRANSLATIONS,
   FAURECIA_TRANSLATIONS,
   AUDIBENE_CONSULTANT_TRANSLATIONS,
+  CASTLE_RAIDER_TRANSLATIONS,
+  PACMAN_TRANSLATIONS,
+  MONSTERJA_LAND_TRANSLATIONS,
+  FACEBOOK_DISTRIBUTED_TRANSLATIONS,
+  UTCHAT_TRANSLATIONS,
+  TROMBI_UTC_TRANSLATIONS,
 }

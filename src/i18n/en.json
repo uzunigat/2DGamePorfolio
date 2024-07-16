@@ -69,5 +69,37 @@
             "duration": "July 2020 - August 2020",
             "description": "Finalize the web-based digital audit version, Adapt the system according to the requests formulated by our internal 'GIS' department, Provide feedback and modifications to comments made by users, Ensure the setting and correction of bugs"
         }
+    },
+    "projects": {
+        "castleRaider": {
+            "title": "Castle Raider",
+            "description": "RPG Game created using Game Maker Studio",
+            "github": "https://github.com/uzunigat/Castle_Raider"
+        },
+        "pacman": {
+            "title": "Pacman",
+            "description": "Classic Pacman game created using Unity",
+            "github": "https://github.com/uzunigat/Pizzaman"
+        },
+        "monsterjaLand": {
+            "title": "Monsterja Land",
+            "description": "Infinite Game using Unity",
+            "github": "https://github.com/uzunigat/monserja-land"
+        },
+        "facebookDistributed": {
+            "title": "Facebook Distributed",
+            "description": "Distributed Facebook App that uses php and local DB's",
+            "github": "https://github.com/uzunigat/distributed-fb"
+        },
+        "utchat": {
+            "title": "UTChat",
+            "description": "Chat Application using Java JSP and websockets",
+            "github": "https://github.com/uzunigat/utchat"
+        },
+        "trombiUTC": {
+            "title": "Trombi UTC",
+            "description": "Web Application for the University of Technology of Compiègne",
+            "github": "https://github.com/uzunigat/trombi-utc"
+        }
     }
 }

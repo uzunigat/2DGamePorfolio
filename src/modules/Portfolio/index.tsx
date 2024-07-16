@@ -22,8 +22,8 @@ export const Portfolio = () => {
     <div className={darkMode ? "dark" : ""}>
       <main className='bg-white scroll-smooth px-10 md:px-20 lg:px-40 dark:bg-gray-900'>
         <Presentation toggleDarkMode={toggleDarkMode} />
-        <div className='my-6 border-b-2 border-gray-200 dark:border-gray-700 w-full lg:max-w-screen-2xl mx-auto'></div>
-        <AboutMe />
+        {/* <div className='my-6 border-b-2 border-gray-200 dark:border-gray-700 w-full lg:max-w-screen-2xl mx-auto'></div>
+        <AboutMe /> */}
         <div className='my-6 border-b-2 border-gray-200 dark:border-gray-700 w-full lg:max-w-screen-2xl mx-auto'></div>
         <Education />
         <Experience />
